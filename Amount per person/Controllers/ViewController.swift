@@ -91,11 +91,13 @@ class ViewController: UIViewController {
         let persons = personsCustomView.personsCounter
         let result = Double(sum) / Double(persons)
         
-        if result == 0.0 {
+        let formattedResult = Int(result.rounded(.up))
+        
+        if formattedResult == 0 {
             descriptionLabel.text = "Enter the bill amount, number of people, tip percentage and click \"Calculate\""
             descriptionLabel.textColor = .black
         } else {
-            descriptionLabel.text = "\(result) per person"
+            descriptionLabel.text = "Bill: \(formattedResult) per person."
             descriptionLabel.textColor = .black
         }
     }
@@ -140,4 +142,3 @@ extension ViewController {
         ])
     }
 }
-

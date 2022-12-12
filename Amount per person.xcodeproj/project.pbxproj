@@ -64,24 +64,21 @@
 		4668C57728D732CD00742B67 /* Amount per person */ = {
 			isa = PBXGroup;
 			children = (
-				4668C58C28D732E100742B67 /* Applecation */,
+				46F6E46E29473F3900933E91 /* Resources */,
+				4668C58C28D732E100742B67 /* DefaultFiles */,
 				4668C58E28D7330500742B67 /* Views */,
 				4668C58D28D732F800742B67 /* Controllers */,
-				4668C57E28D732CD00742B67 /* Main.storyboard */,
-				4668C58128D732CE00742B67 /* Assets.xcassets */,
-				4668C58328D732CE00742B67 /* LaunchScreen.storyboard */,
-				4668C58628D732CE00742B67 /* Info.plist */,
 			);
 			path = "Amount per person";
 			sourceTree = "<group>";
 		};
-		4668C58C28D732E100742B67 /* Applecation */ = {
+		4668C58C28D732E100742B67 /* DefaultFiles */ = {
 			isa = PBXGroup;
 			children = (
 				4668C57828D732CD00742B67 /* AppDelegate.swift */,
 				4668C57A28D732CD00742B67 /* SceneDelegate.swift */,
 			);
-			path = Applecation;
+			path = DefaultFiles;
 			sourceTree = "<group>";
 		};
 		4668C58D28D732F800742B67 /* Controllers */ = {
@@ -95,10 +92,8 @@
 		4668C58E28D7330500742B67 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4668C59028D7335B00742B67 /* TotalBillCustomView.swift */,
-				4668C59228D7338100742B67 /* PersonsCustomView.swift */,
-				4668C59428D7339E00742B67 /* TipsCustomView.swift */,
-				4668C58F28D7330E00742B67 /* Cells */,
+				46F6E46D29473F2100933E91 /* Storyboards */,
+				46F6E46C29473F0F00933E91 /* CustomViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,6 +104,35 @@
 				4668C59628D733C200742B67 /* TipsCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		46F6E46C29473F0F00933E91 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				4668C59028D7335B00742B67 /* TotalBillCustomView.swift */,
+				4668C59228D7338100742B67 /* PersonsCustomView.swift */,
+				4668C59428D7339E00742B67 /* TipsCustomView.swift */,
+				4668C58F28D7330E00742B67 /* Cells */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		46F6E46D29473F2100933E91 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4668C57E28D732CD00742B67 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		46F6E46E29473F3900933E91 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4668C58128D732CE00742B67 /* Assets.xcassets */,
+				4668C58328D732CE00742B67 /* LaunchScreen.storyboard */,
+				4668C58628D732CE00742B67 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,7 +361,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2L2N455LK4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Amount per person/Info.plist";
+				INFOPLIST_FILE = "Amount per person/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -365,7 +389,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2L2N455LK4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Amount per person/Info.plist";
+				INFOPLIST_FILE = "Amount per person/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
