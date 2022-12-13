@@ -90,7 +90,6 @@
 		4668C58E28D7330500742B67 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				46F6E46D29473F2100933E91 /* Storyboards */,
 				46F6E46C29473F0F00933E91 /* CustomViews */,
 			);
 			path = Views;
@@ -113,13 +112,6 @@
 				4668C58F28D7330E00742B67 /* Cells */,
 			);
 			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		46F6E46D29473F2100933E91 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		46F6E46E29473F3900933E91 /* Resources */ = {

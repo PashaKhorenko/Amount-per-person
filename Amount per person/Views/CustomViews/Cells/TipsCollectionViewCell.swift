@@ -23,10 +23,15 @@ class TipsCollectionViewCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                layer.borderWidth = 3
                 layer.borderColor = #colorLiteral(red: 0.2705882353, green: 0.2745098039, blue: 0.3333333333, alpha: 1)
+                UIView.animate(withDuration: 0.1) {
+                    self.layer.borderWidth = 3
+                }
             } else {
-                layer.borderWidth = 0
+                UIView.animate(withDuration: 0.1) {
+                    self.layer.borderWidth = 0
+                }
+                
             }
         }
     }

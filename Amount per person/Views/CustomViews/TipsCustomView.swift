@@ -29,6 +29,7 @@ class TipsCustomView: UIView {
     }()
     
     private let tipsArray = ["5%", "10%", "25%", "50%"]
+    private var selectedItemIndexPath: IndexPath?
     var tipCount = 0
     
     // MARK: init
@@ -85,17 +86,30 @@ extension TipsCustomView: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension TipsCustomView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch indexPath.item {
-        case 0:
-            tipCount = 5
-        case 1:
-            tipCount = 10
-        case 2:
-            tipCount = 25
-        case 3:
-            tipCount = 50
-        default:
+        
+        if selectedItemIndexPath == indexPath {
+            
+            tipsCollectionView.deselectItem(at: indexPath, animated: true)
             tipCount = 0
+            selectedItemIndexPath = nil
+            
+        } else {
+            
+            selectedItemIndexPath = indexPath
+            
+            switch indexPath.item {
+            case 0:
+                tipCount = 5
+            case 1:
+                tipCount = 10
+            case 2:
+                tipCount = 25
+            case 3:
+                tipCount = 50
+            default:
+                fatalError("The selected cell does not exist.")
+            }
+            
         }
     }
 }
