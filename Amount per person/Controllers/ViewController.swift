@@ -30,10 +30,10 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Enter the bill amount, number of people, tip percentage and click \"Calculate\""
         label.textColor = .black
-        label.font = UIFont(name: "Avenir Next Bold", size: 15)
+        label.font = UIFont(name: "Avenir Next Bold", size: 14)
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.75
+        label.minimumScaleFactor = 0.5
         label.numberOfLines = 3
         return label
     }()
@@ -107,38 +107,39 @@ class ViewController: UIViewController {
 extension ViewController {
     func setConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            logoImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
-            logoImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
-            
-            descriptionLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 15),
+            descriptionLabel.bottomAnchor.constraint(equalTo: totalBillCustomView.topAnchor, constant: -10),
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            
+            totalBillCustomView.bottomAnchor.constraint(equalTo: personsCustomView.topAnchor, constant: -15),
+            totalBillCustomView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            totalBillCustomView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            totalBillCustomView.heightAnchor.constraint(equalToConstant: 100),
+            
+            personsCustomView.bottomAnchor.constraint(equalTo: tipsCustomView.topAnchor, constant: -15),
+            personsCustomView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            personsCustomView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            personsCustomView.heightAnchor.constraint(equalToConstant: 100),
+            
+            tipsCustomView.bottomAnchor.constraint(equalTo: calculateButton.topAnchor, constant: -20),
+            tipsCustomView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            tipsCustomView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            tipsCustomView.heightAnchor.constraint(equalToConstant: 100),
             
             calculateButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -5),
             calculateButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             calculateButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             calculateButton.heightAnchor.constraint(equalToConstant: 70),
             
-            tipsCustomView.bottomAnchor.constraint(equalTo: calculateButton.topAnchor, constant: -20),
-            tipsCustomView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            tipsCustomView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            tipsCustomView.heightAnchor.constraint(equalToConstant: 100),
-
-            personsCustomView.bottomAnchor.constraint(equalTo: tipsCustomView.topAnchor, constant: -15),
-            personsCustomView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            personsCustomView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            personsCustomView.heightAnchor.constraint(equalToConstant: 100),
-
-            totalBillCustomView.bottomAnchor.constraint(equalTo: personsCustomView.topAnchor, constant: -15),
-            totalBillCustomView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            totalBillCustomView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            totalBillCustomView.heightAnchor.constraint(equalToConstant: 100)
+            logoImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            logoImageView.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -10),
+            logoImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            logoImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
 }

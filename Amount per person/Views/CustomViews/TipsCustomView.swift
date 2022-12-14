@@ -118,8 +118,8 @@ extension TipsCustomView: UICollectionViewDelegate {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension TipsCustomView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: tipsCollectionView.frame.height * 0.9,
-               height: tipsCollectionView.frame.height * 0.9)
+        CGSize(width: tipsCollectionView.frame.height * 0.89,
+               height: tipsCollectionView.frame.height * 0.89)
     }
 }
 
