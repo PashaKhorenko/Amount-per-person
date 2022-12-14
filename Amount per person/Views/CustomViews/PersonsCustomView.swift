@@ -9,7 +9,11 @@ import UIKit
 
 class PersonsCustomView: UIView {
     
-    var personsCounter = 1
+    var personsCounter = 1 {
+        didSet {
+            numberPersonsLabel.text = String(personsCounter)
+        }
+    }
     
     // MARK: UI-elemants
     private let titleLabel: UILabel = {
@@ -44,6 +48,10 @@ class PersonsCustomView: UIView {
         button.titleLabel?.font = UIFont(name: "Avenir Next", size: 50)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(minusButtonTapped), for: .touchUpInside)
+        
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(minusButtonLongTapped))
+        button.addGestureRecognizer(longGesture)
+        
         return button
     }()
     let numberPersonsLabel: UILabel = {
@@ -56,18 +64,22 @@ class PersonsCustomView: UIView {
         return label
     }()
     
+    
+    //MARK: - @objc func
     @objc func plusButtonTapped() {
         personsCounter += 1
-        numberPersonsLabel.text = "\(personsCounter)"
     }
     
     @objc func minusButtonTapped() {
-        
         if personsCounter != 1 {
             personsCounter -= 1
-            numberPersonsLabel.text = "\(personsCounter)"
         }
     }
+    
+    @objc func minusButtonLongTapped() {
+        personsCounter = 1
+    }
+    
     
     // MARK: - init
     override init(frame: CGRect) {
